@@ -1,0 +1,124 @@
+.contact-booking-section {
+  max-width: 1100px;
+  margin: 2.5rem auto 2rem auto;
+  background: #fffbe6;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(44,43,94,0.09);
+  padding: 2.5rem 2rem;
+}
+.contact-booking-section h2 {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #bfa14a;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.contact-booking-grid {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.contact-form {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px #bfa14a22;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  min-width: 320px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.contact-form h3 {
+  font-size: 1.2rem;
+  color: #1a237e;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+.contact-form input {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.7rem 1rem;
+  border-radius: 0.8rem;
+  border: 1.5px solid #e7d6a8;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+.contact-form button {
+  background: linear-gradient(90deg, #bfa14a 0%, #1a237e 100%);
+  color: #fffbe6;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #bfa14a22;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+  margin-bottom: 1rem;
+}
+.contact-form button:hover {
+  background: linear-gradient(90deg, #1a237e 0%, #bfa14a 100%);
+  color: #fffbe6;
+  box-shadow: 0 4px 16px #bfa14a44;
+  transform: scale(1.07);
+}
+.whatsapp-btn {
+  display: inline-block;
+  background: #25d366;
+  color: #fff;
+  border-radius: 1.2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 2px 8px #25d36622;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.whatsapp-btn:hover {
+  background: #128c7e;
+  color: #fffbe6;
+  box-shadow: 0 4px 16px #25d36644;
+  transform: scale(1.07);
+}
+.contact-info {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px #bfa14a22;
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  min-width: 320px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-info h3 {
+  font-size: 1.2rem;
+  color: #1a237e;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+.map-embed {
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.social-links a {
+  color: #1a237e;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.social-links a:hover {
+  color: #bfa14a;
+}

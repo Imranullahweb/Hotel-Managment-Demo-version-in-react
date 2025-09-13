@@ -1,0 +1,272 @@
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.packages-offers-section {
+  max-width: 1200px;
+  margin: 2.5rem auto 2rem auto;
+  background: #fffbe6;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(44,43,94,0.09);
+  padding: 2.5rem 2rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.packages-offers-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.packages-offers-section h2 {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #bfa14a;
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.6s ease-out 0.2s;
+}
+
+.packages-offers-section.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+@keyframes gridUnveil {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) rotateX(20deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0) scale(1);
+  }
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.2rem;
+  margin-top: 1rem;
+}
+
+.packages-offers-section.visible .packages-grid {
+  animation: gridUnveil 1s cubic-bezier(0.23, 1, 0.32, 1) 0.3s forwards;
+}
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    box-shadow: 0 0 0 rgba(191, 161, 74, 0);
+  }
+  50% {
+    box-shadow: 0 20px 40px rgba(191, 161, 74, 0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 2px 12px rgba(191, 161, 74, 0.13);
+  }
+}
+
+.package-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(191, 161, 74, 0.13);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  border: 1px solid rgba(191, 161, 74, 0.1);
+}
+
+.packages-offers-section.visible .package-card {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(0.2s * var(--i));
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(191, 161, 74, 0.2);
+  border-color: rgba(191, 161, 74, 0.2);
+}
+.package-card:hover {
+  box-shadow: 0 8px 32px #bfa14a44;
+  transform: translateY(-4px) scale(1.03);
+}
+@keyframes textGlimmer {
+  0% {
+    background-position: -100% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.package-card h3 {
+  font-size: 1.25rem;
+  color: #1a237e;
+  margin-bottom: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-weight: 700;
+}
+
+.packages-offers-section.visible .package-card h3 {
+  opacity: 1;
+  transform: translateY(0);
+  animation: textGlimmer 6s linear infinite;
+  animation-delay: calc(0.3s * var(--i) + 1s);
+}
+
+@keyframes detailsReveal {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.package-details {
+  list-style: none;
+  margin: 0 0 1.2rem 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.package-details li {
+  margin-bottom: 0.5rem;
+  color: #2d2a4a;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.package-details li:before {
+  content: "•";
+  color: #bfa14a;
+  position: absolute;
+  left: 0.5rem;
+}
+.package-details li {
+  font-size: 1rem;
+  color: #2d2a4a;
+  margin-bottom: 0.5rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+.package-details li:before {
+  content: "\2022";
+  color: #bfa14a;
+  position: absolute;
+  left: 0;
+}
+@keyframes priceShine {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.package-price {
+  font-size: 1.3rem;
+  color: #bfa14a;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+  padding: 0.5rem 1rem;
+  background: rgba(191, 161, 74, 0.1);
+  border-radius: 0.8rem;
+}
+
+.package-save {
+  font-size: 1rem;
+  color: #1a237e;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  padding: 0.3rem 1rem;
+  background: rgba(26, 35, 126, 0.1);
+  border-radius: 0.8rem;
+}
+
+@keyframes buttonGlow {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    box-shadow: 0 0 0 rgba(191, 161, 74, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(191, 161, 74, 0.3);
+  }
+}
+
+.package-book-btn {
+  background: linear-gradient(90deg, #bfa14a 0%, #1a237e 100%);
+  color: #fffbe6;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.packages-offers-section.visible .package-book-btn {
+  animation: buttonGlow 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: calc(0.7s * var(--i) + 1.8s);
+}
+
+.package-book-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+  transform: rotate(45deg);
+  transition: all 0.6s ease-in-out;
+  opacity: 0;
+}
+
+.package-book-btn:hover {
+  background: linear-gradient(90deg, #1a237e 0%, #bfa14a 100%);
+  color: #fffbe6;
+  box-shadow: 0 8px 25px rgba(191, 161, 74, 0.4);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.package-book-btn:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translate(50%, 50%);
+}

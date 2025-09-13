@@ -1,0 +1,190 @@
+.hotel-rooms-section {
+  max-width: 1200px;
+  margin: 2.5rem auto 2rem auto;
+  background: #fffbe6;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(44,43,94,0.09);
+  padding: 2.5rem 2rem;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.hotel-rooms-section.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    letter-spacing: 15px;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: normal;
+  }
+}
+
+.hotel-rooms-section h2 {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #bfa14a;
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0;
+}
+
+.hotel-rooms-section.visible h2 {
+  animation: titleReveal 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s forwards;
+}
+@keyframes roomGridReveal {
+  0% {
+    transform: perspective(1000px) rotateX(30deg);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.2rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.hotel-rooms-section.visible .room-grid {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes roomCardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.room-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px #bfa14a22;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  position: relative;
+}
+
+.hotel-rooms-section.visible .room-card {
+  animation: roomCardFloat 3s ease-in-out infinite;
+  animation-delay: calc(0.2s * var(--i));
+}
+.room-card:hover {
+  box-shadow: 0 8px 32px #bfa14a44;
+  transform: translateY(-4px) scale(1.03);
+}
+@keyframes imageReveal {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.room-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #e7d6a8;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: calc(0.2s * var(--i));
+}
+
+.hotel-rooms-section.visible .room-thumb {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@keyframes infoSlide {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.room-info {
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-delay: calc(0.4s + 0.2s * var(--i));
+}
+
+.hotel-rooms-section.visible .room-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+.room-info h3 {
+  font-size: 1.25rem;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+.room-price {
+  font-size: 1rem;
+  color: #bfa14a;
+  margin-bottom: 0.7rem;
+}
+.room-amenities {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin: 0 0 1.2rem 0;
+  padding: 0;
+}
+.room-amenities li {
+  background: #f7e9ce;
+  color: #2d2a4a;
+  border-radius: 0.8rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.98rem;
+  box-shadow: 0 1px 4px #bfa14a11;
+}
+.room-book-btn {
+  background: linear-gradient(90deg, #bfa14a 0%, #1a237e 100%);
+  color: #fffbe6;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #bfa14a22;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.room-book-btn:hover {
+  background: linear-gradient(90deg, #1a237e 0%, #bfa14a 100%);
+  color: #fffbe6;
+  box-shadow: 0 4px 16px #bfa14a44;
+  transform: scale(1.07);
+}

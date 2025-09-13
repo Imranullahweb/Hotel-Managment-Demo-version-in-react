@@ -1,0 +1,216 @@
+.wedding-logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 6px 24px rgba(191,161,74,0.18);
+  background: #fffbe6;
+  animation: logoPopIn 1.2s cubic-bezier(.77,0,.18,1) 0.2s both, logoPulse 2.5s infinite alternate;
+  transition: transform 0.4s cubic-bezier(.77,0,.18,1), box-shadow 0.4s;
+}
+.wedding-logo-img:hover {
+  transform: scale(1.08) rotate(-6deg);
+  box-shadow: 0 12px 32px #bfa14a44;
+}
+
+@keyframes logoPopIn {
+  0% { transform: scale(0.5) rotate(-30deg); opacity: 0; }
+  70% { transform: scale(1.1) rotate(10deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@keyframes logoPulse {
+  0% { box-shadow: 0 6px 24px #bfa14a33; }
+  100% { box-shadow: 0 12px 32px #bfa14a55; }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2.5rem;
+  background: linear-gradient(90deg, #0f2027 0%, #2c5364 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(44,83,100,0.15);
+  border-radius: 0 0 1.5rem 1.5rem;
+  position: relative;
+  z-index: 10;
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  backdrop-filter: blur(8px) saturate(120%);
+  border-bottom: 2px solid rgba(255,255,255,0.08);
+  animation: headerFadeIn 1.2s cubic-bezier(.77,0,.18,1) 0.1s both;
+}
+
+@keyframes headerFadeIn {
+  from { opacity: 0; transform: translateY(-40px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.logo img {
+  height: 100px;
+  width: 153px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44,83,100,0.18);
+  background: #fff;
+  animation: logoSpin 2.5s cubic-bezier(.77,0,.18,1) 0.2s;
+  animation-iteration-count: 1;
+  margin-right: 0.7rem;
+}
+
+
+/* Wedding/Banquet Header Style */
+.wedding-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 3.5rem 1.1rem 2.5rem;
+  background: linear-gradient(90deg, #fffbe6 0%, #f7e9ce 100%);
+  color: #bfa14a;
+  box-shadow: 0 6px 32px rgba(191,161,74,0.10);
+  border-radius: 0 0 2.2rem 2.2rem;
+  position: relative;
+  z-index: 10;
+  border-bottom: 3px solid #e7d6a8;
+  font-family: 'Playfair Display', serif;
+  animation: weddingHeaderFadeIn 1.2s cubic-bezier(.77,0,.18,1) 0.1s both;
+  overflow-x: hidden;
+}
+
+@keyframes weddingHeaderFadeIn {
+  from { opacity: 0; transform: translateY(-40px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+
+.wedding-logo {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+.wedding-logo img {
+  height: 100px;
+  width: 153px;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(191,161,74,0.13);
+  background: #fffbe6;
+  animation: logoSpin 2.5s cubic-bezier(.77,0,.18,1) 0.2s;
+  animation-iteration-count: 1;
+  margin-right: 0.2rem;
+}
+
+
+.wedding-title {
+  font-size: 2.1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  color: #2d2a4a;
+  background: linear-gradient(90deg, #2d2a4a 0%, #bfa14a 40%, #fffbe6 60%, #2d2a4a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 12px #f7e9ce;
+  vertical-align: middle;
+  text-transform: uppercase;
+  position: relative;
+  animation: shimmerGold 2.5s infinite linear;
+  background-size: 200% auto;
+}
+
+@keyframes shimmerGold {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: 0% center;
+  }
+}
+
+@keyframes logoSpin {
+  0% { transform: rotate(-180deg) scale(0.7); opacity: 0; }
+  60% { transform: rotate(20deg) scale(1.1); opacity: 1; }
+  100% { transform: rotate(0deg) scale(1); opacity: 1; }
+}
+
+.wedding-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 2.1rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  animation: navFadeIn 1.2s cubic-bezier(.77,0,.18,1) 0.5s both;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  white-space: nowrap;
+}
+
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: none; }
+}
+
+.wedding-nav li {
+  position: relative;
+}
+.wedding-nav a {
+  color: #1a237e;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  padding: 0.45rem 1.2rem 0.45rem 1.2rem;
+  border-radius: 2rem;
+  position: relative;
+  transition: color 0.22s, background 0.22s, box-shadow 0.22s, transform 0.18s;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fffbe6;
+  box-shadow: 0 2px 8px rgba(44,43,94,0.07);
+  border: 1.5px solid #e7d6a8;
+}
+.wedding-nav a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0.18rem;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #bfa14a 0%, #fffbe6 100%);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transition: transform 0.35s cubic-bezier(.77,0,.18,1);
+  z-index: -1;
+}
+.wedding-nav a:hover,
+.wedding-nav a:focus {
+  color: #fffbe6;
+  background: linear-gradient(90deg, #bfa14a 0%, #1a237e 100%);
+  box-shadow: 0 4px 16px #bfa14a44;
+  border-color: #bfa14a;
+  transform: translateY(-2px) scale(1.07);
+  border-radius: 2rem;
+}
+.wedding-nav a:hover::after,
+.wedding-nav a:focus::after {
+  transform: scaleX(1);
+}
+
+.wedding-header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 10% 20%, rgba(191,161,74,0.10) 0, transparent 60%),
+              radial-gradient(circle at 80% 60%, rgba(255,251,230,0.10) 0, transparent 70%),
+              radial-gradient(circle at 50% 90%, rgba(247,233,206,0.08) 0, transparent 80%);
+  animation: sparkleMove 8s linear infinite alternate;
+}
+
+@keyframes sparkleMove {
+  0% { background-position: 10% 20%, 80% 60%, 50% 90%; }
+  100% { background-position: 20% 10%, 70% 80%, 60% 100%; }
+}

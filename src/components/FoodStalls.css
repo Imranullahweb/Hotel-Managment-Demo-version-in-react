@@ -1,0 +1,205 @@
+@keyframes plateServe {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotate(-15deg);
+  }
+  60% {
+    transform: translateX(10%) rotate(5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+  }
+}
+
+.food-stalls-section {
+  max-width: 1200px;
+  margin: 2.5rem auto 2rem auto;
+  background: #fffbe6;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(44,43,94,0.09);
+  padding: 2.5rem 2rem;
+  transform-origin: center;
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1);
+}
+
+.food-stalls-section.visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
+@keyframes steamRise {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-10px);
+    filter: blur(0);
+  }
+}
+
+.food-stalls-section h2 {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #bfa14a;
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0;
+}
+
+.food-stalls-section.visible h2 {
+  animation: steamRise 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.2rem;
+  perspective: 1000px;
+}
+
+@keyframes cardServe {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%) rotateY(-45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotateY(0);
+  }
+}
+
+.food-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px #bfa14a22;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: left;
+  opacity: 0;
+}
+
+.food-stalls-section.visible .food-card {
+  animation: cardServe 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: calc(0.15s * var(--i));
+}
+.food-card:hover {
+  box-shadow: 0 8px 32px #bfa14a44;
+  transform: translateY(-4px) scale(1.03);
+}
+@keyframes foodSizzle {
+  0%, 100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+}
+
+.food-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #e7d6a8;
+  opacity: 0;
+  transform-origin: center;
+  transition: all 0.4s ease-out;
+}
+
+.food-stalls-section.visible .food-thumb {
+  opacity: 1;
+  animation: foodSizzle 3s ease-in-out infinite;
+  animation-delay: calc(0.3s + 0.2s * var(--i));
+}
+
+@keyframes infoAroma {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    filter: blur(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.food-info {
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  text-align: center;
+  opacity: 0;
+}
+
+.food-stalls-section.visible .food-info {
+  animation: infoAroma 0.8s ease-out forwards;
+  animation-delay: calc(0.6s + 0.2s * var(--i));
+}
+.food-info h3 {
+  font-size: 1.25rem;
+  color: #1a237e;
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+.food-cuisine {
+  font-size: 1rem;
+  color: #bfa14a;
+  margin-bottom: 0.7rem;
+}
+.food-desc {
+  font-size: 1rem;
+  color: #2d2a4a;
+  margin-bottom: 1.2rem;
+}
+@keyframes buttonSpice {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px #bfa14a22;
+  }
+  50% {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px #bfa14a44;
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px #bfa14a22;
+  }
+}
+
+.food-catering-btn {
+  background: linear-gradient(90deg, #bfa14a 0%, #1a237e 100%);
+  color: #fffbe6;
+  border: none;
+  border-radius: 1.2rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #bfa14a22;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.food-stalls-section.visible .food-catering-btn {
+  opacity: 1;
+  transform: translateY(0);
+  animation: buttonSpice 3s ease-in-out infinite;
+  animation-delay: calc(1s + 0.2s * var(--i));
+}
+
+.food-catering-btn:hover {
+  background: linear-gradient(90deg, #1a237e 0%, #bfa14a 100%);
+  color: #fffbe6;
+  transform: scale(1.07);
+  box-shadow: 0 8px 24px rgba(191, 161, 74, 0.4);
+}
